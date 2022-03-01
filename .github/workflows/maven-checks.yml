@@ -13,8 +13,6 @@ env:
 jobs:
   maven-checks:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
     timeout-minutes: 45
     steps:
       - name: Free Disk Space
