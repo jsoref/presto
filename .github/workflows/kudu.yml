@@ -1,4 +1,4 @@
-name: ci
+name: kudu
 
 on:
   pull_request:

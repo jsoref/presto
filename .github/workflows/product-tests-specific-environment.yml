@@ -1,4 +1,4 @@
-name: ci
+name: product tests (specific)
 
 on:
   pull_request:
@@ -14,6 +14,7 @@ env:
 jobs:
   product-tests-specific-environment1:
     runs-on: ubuntu-latest
+    name: environment 1
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v2
@@ -50,6 +51,7 @@ jobs:
 
   product-tests-specific-environment2:
     runs-on: ubuntu-latest
+    name: environment 2
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v2

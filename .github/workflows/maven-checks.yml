@@ -1,4 +1,4 @@
-name: ci
+name: maven checks
 
 on:
   pull_request:

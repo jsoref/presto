@@ -1,4 +1,4 @@
-name: ci
+name: hive tests
 
 on:
   pull_request:

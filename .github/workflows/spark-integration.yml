@@ -1,4 +1,4 @@
-name: ci
+name: spark integration
 
 on:
   pull_request:

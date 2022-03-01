@@ -1,4 +1,4 @@
-name: ci
+name: product tests (basic)
 
 on:
   pull_request:
