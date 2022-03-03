@@ -1637,7 +1637,7 @@ public abstract class AbstractTestJoinQueries
     }
 
     @Test
-    public void testUnionWithJoinOnNonTranslateableSymbols()
+    public void testUnionWithJoinOnNonTranslatableSymbols()
     {
         assertQuery("SELECT *\n" +
                 "FROM (SELECT orderdate ds, orderkey\n" +
