@@ -32,7 +32,7 @@ public class ProcedureColumnJdbcTable
 
     public static final ConnectorTableMetadata METADATA = tableMetadataBuilder(NAME)
             .column("procedure_cat", createUnboundedVarcharType())
-            .column("procedure_schem", createUnboundedVarcharType())
+            .column("procedure_schema", createUnboundedVarcharType())
             .column("procedure_name", createUnboundedVarcharType())
             .column("column_name", createUnboundedVarcharType())
             .column("column_type", BIGINT)
