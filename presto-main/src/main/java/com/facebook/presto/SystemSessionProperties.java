@@ -565,7 +565,7 @@ public final class SystemSessionProperties
                         JoinReorderingStrategy::name),
                 new PropertyMetadata<>(
                         PARTIAL_MERGE_PUSHDOWN_STRATEGY,
-                        format("Experimental: Partial merge pushdown strategy to use. Optionas are %s",
+                        format("Experimental: Partial merge pushdown strategy to use. Options are %s",
                                 Stream.of(PartialMergePushdownStrategy.values())
                                         .map(PartialMergePushdownStrategy::name)
                                         .collect(joining(","))),
