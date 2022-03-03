@@ -77,7 +77,7 @@ permissions_validity_in_ms: 2000
 #
 # - RandomPartitioner distributes rows across the cluster evenly by md5.
 #   This is the default prior to 1.2 and is retained for compatibility.
-# - Murmur3Partitioner is similar to RandomPartioner but uses Murmur3_128
+# - Murmur3Partitioner is similar to RandomPartitioner but uses Murmur3_128
 #   Hash Function instead of md5.  When in doubt, this is the best option.
 # - ByteOrderedPartitioner orders rows lexically by key bytes.  BOP allows
 #   scanning rows in key order, but the ordering can generate hot spots
