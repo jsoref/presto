@@ -645,7 +645,7 @@ public class TestExpressionDomainTranslator
     }
 
     @Test
-    void testNonImplictCastOnSymbolSide()
+    void testNonImplicitCastOnSymbolSide()
     {
         // we expect TupleDomain.all here().
         // see comment in ExpressionDomainTranslator.Visitor.visitComparisonExpression()
