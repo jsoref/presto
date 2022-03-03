@@ -888,14 +888,14 @@ public class PlanBuilder
                 0);
     }
 
-    public RowNumberNode rowNumber(List<VariableReferenceExpression> partitionBy, Optional<Integer> maxRowCountPerPartition, VariableReferenceExpression rownNumberVariable, PlanNode source)
+    public RowNumberNode rowNumber(List<VariableReferenceExpression> partitionBy, Optional<Integer> maxRowCountPerPartition, VariableReferenceExpression rowNumberVariable, PlanNode source)
     {
         return new RowNumberNode(
                 Optional.empty(),
                 idAllocator.getNextId(),
                 source,
                 partitionBy,
-                rownNumberVariable,
+                rowNumberVariable,
                 maxRowCountPerPartition,
                 Optional.empty());
     }
