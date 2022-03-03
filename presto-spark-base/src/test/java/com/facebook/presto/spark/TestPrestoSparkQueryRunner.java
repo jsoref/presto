@@ -1176,7 +1176,7 @@ public class TestPrestoSparkQueryRunner
         assertQuerySucceeds(format("CALL system.create_empty_partition('%s', '%s', ARRAY['orderstatus'], ARRAY['%s'])", "tpch", "test_partition_table", "y"));
         actual = computeActual("SELECT count(*) FROM \"test_partition_table$partitions\"");
 
-        // 2 new paritions added
+        // 2 new partitions added
         assertEquals(actual.getOnlyValue().toString(), "5");
         assertQuerySucceeds("DROP TABLE test_partition_table");
     }
