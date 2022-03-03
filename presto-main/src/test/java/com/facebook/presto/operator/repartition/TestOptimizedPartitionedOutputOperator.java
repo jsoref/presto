@@ -757,13 +757,13 @@ public class TestOptimizedPartitionedOutputOperator
         }
         operator.finish();
 
-        Map<Integer, List<Page>> acutualPageLists = outputBuffer.getPages();
+        Map<Integer, List<Page>> actualPageLists = outputBuffer.getPages();
 
-        assertEquals(acutualPageLists.size(), PARTITION_COUNT);
+        assertEquals(actualPageLists.size(), PARTITION_COUNT);
 
         Page expectedPage = mergePages(types, pages);
 
-        acutualPageLists.values().forEach(pageList -> assertPageEquals(types, mergePages(types, pageList), expectedPage));
+        actualPageLists.values().forEach(pageList -> assertPageEquals(types, mergePages(types, pageList), expectedPage));
     }
 
     @Test
