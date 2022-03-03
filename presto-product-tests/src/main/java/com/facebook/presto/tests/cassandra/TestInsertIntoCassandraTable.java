@@ -140,7 +140,7 @@ public class TestInsertIntoCassandraTable
     }
 
     @Test(groups = CASSANDRA)
-    public void testInsertIntoValuesToCassandraMaterizedView()
+    public void testInsertIntoValuesToCassandraMaterializedView()
             throws Exception
     {
         TableName table = mutableTablesState().get(CASSANDRA_INSERT_TABLE).getTableName();
