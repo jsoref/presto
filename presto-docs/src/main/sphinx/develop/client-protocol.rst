@@ -106,7 +106,7 @@ Request Header Name                    Description
                                        ``X-Presto-Started-Transaction-Id`` and cleared by ``X-Presto-Clear-Transaction-Id``.
 ``X-Presto-Client-Info``               Contains arbitrary information about the client program submitting the query.
 ``X-Presto-Client-Tags``               A comma-separated list of "tag" strings, used to identify Presto resource groups.
-``X-Presto-Resource-Estimate``         A comma-separated list of ``resource=value`` type assigments.  The possible choices
+``X-Presto-Resource-Estimate``         A comma-separated list of ``resource=value`` type assignments.  The possible choices
                                        of ``resource`` are "EXECUTION_TIME", "CPU_TIME",  "PEAK_MEMORY" and "PEAK_TASK_MEMORY".
                                        "EXECUTION_TIME" and "CPU_TIME" have values specified as airlift ``Duration`` strings,
                                        whose format is a double precision number followed by a ``TimeUnit`` string, e.g.,
