@@ -479,11 +479,11 @@ public final class HiveUtil
     {
         String name = getDeserializerClassName(schema);
 
-        // for collection delimiter, Hive 1.x, 2.x uses "colelction.delim" but Hive 3.x uses "collection.delim"
+        // for collection delimiter, Hive 1.x, 2.x uses "collection.delim" but Hive 3.x uses "collection.delim"
         // see also https://issues.apache.org/jira/browse/HIVE-16922
         if (name.equals("org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe")) {
-            if (schema.containsKey("colelction.delim") && !schema.containsKey(COLLECTION_DELIM)) {
-                schema.put(COLLECTION_DELIM, schema.getProperty("colelction.delim"));
+            if (schema.containsKey("collection.delim") && !schema.containsKey(COLLECTION_DELIM)) {
+                schema.put(COLLECTION_DELIM, schema.getProperty("collection.delim"));
             }
         }
 
@@ -1110,7 +1110,7 @@ public final class HiveUtil
             Integer physicalOrdinal = physicalNameOrdinalMap.get(column.getName());
             if (physicalOrdinal == null) {
                 // if the column is missing from the file, assign it a column number larger than the number of columns in the
-                // file so the reader will fill it with nulls.  If the index is negative, i.e. this is a sythesized column like
+                // file so the reader will fill it with nulls.  If the index is negative, i.e. this is a synthesized column like
                 // a partitioning key, $bucket or $path, leave it as is.
                 if (column.getHiveColumnIndex() < 0) {
                     physicalOrdinal = column.getHiveColumnIndex();

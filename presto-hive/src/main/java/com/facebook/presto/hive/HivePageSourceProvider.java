@@ -765,7 +765,7 @@ public class HivePageSourceProvider
         }
 
         /**
-         * @param columns columns that need to be returned to engine
+         * @param columns that need to be returned to engine
          * @param requiredInterimColumns columns that are needed for processing, but shouldn't be returned to engine (may overlaps with columns)
          * @param tableToPartitionMapping table to partition mapping
          * @param bucketNumber empty if table is not bucketed, a number within [0, # bucket in table) otherwise

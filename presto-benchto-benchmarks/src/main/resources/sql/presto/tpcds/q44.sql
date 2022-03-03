@@ -1,5 +1,5 @@
 SELECT
-  "asceding"."rnk"
+  "ascending"."rnk"
 , "i1"."i_product_name" "best_performing"
 , "i2"."i_product_name" "worst_performing"
 FROM
@@ -30,7 +30,7 @@ FROM
       )  v1
    )  v11
    WHERE ("rnk" < 11)
-)  asceding
+)  ascending
 , (
    SELECT *
    FROM
@@ -61,8 +61,8 @@ FROM
 )  descending
 , ${database}.${schema}.item i1
 , ${database}.${schema}.item i2
-WHERE ("asceding"."rnk" = "descending"."rnk")
-   AND ("i1"."i_item_sk" = "asceding"."item_sk")
+WHERE ("ascending"."rnk" = "descending"."rnk")
+   AND ("i1"."i_item_sk" = "ascending"."item_sk")
    AND ("i2"."i_item_sk" = "descending"."item_sk")
-ORDER BY "asceding"."rnk" ASC
+ORDER BY "ascending"."rnk" ASC
 LIMIT 100

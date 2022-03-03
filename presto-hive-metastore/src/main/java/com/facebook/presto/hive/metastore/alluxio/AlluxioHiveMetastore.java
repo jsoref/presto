@@ -159,23 +159,27 @@ public class AlluxioHiveMetastore
         List<String> dataColumns = table.getDataColumns().stream()
                 .map(Column::getName)
                 .collect(toImmutableList());
-        Map<String, List<ColumnStatisticsInfo>> columnStatisticss;
-        try {
-            columnStatisticss = client.getPartitionColumnStatistics(
-                    table.getDatabaseName(),
-                    table.getTableName(),
-                    partitionBasicStatistics.keySet().stream().collect(toImmutableList()),
-                    dataColumns);
-        }
-        catch (AlluxioStatusException e) {
-            throw new PrestoException(HIVE_METASTORE_ERROR, e);
-        }
 
-        Map<String, Map<String, HiveColumnStatistics>> partitionColumnStatistics = columnStatisticss.entrySet().stream()
-                .filter(entry -> !entry.getValue().isEmpty())
-                .collect(toImmutableMap(
-                        Map.Entry::getKey,
-                        entry -> groupStatisticsByColumn(metastoreContext, entry.getValue(), partitionRowCounts.getOrDefault(entry.getKey(), OptionalLong.empty()))));
+        Map<String, Map<String, HiveColumnStatistics>> partitionColumnStatistics;
+        {
+            Map<String, List<ColumnStatisticsInfo>> columnStatistics;
+            try {
+                columnStatistics = client.getPartitionColumnStatistics(
+                        table.getDatabaseName(),
+                        table.getTableName(),
+                        partitionBasicStatistics.keySet().stream().collect(toImmutableList()),
+                        dataColumns);
+            }
+            catch (AlluxioStatusException e) {
+                throw new PrestoException(HIVE_METASTORE_ERROR, e);
+            }
+
+            partitionColumnStatistics = columnStatistics.entrySet().stream()
+                    .filter(entry -> !entry.getValue().isEmpty())
+                    .collect(toImmutableMap(
+                            Map.Entry::getKey,
+                            entry -> groupStatisticsByColumn(metastoreContext, entry.getValue(), partitionRowCounts.getOrDefault(entry.getKey(), OptionalLong.empty()))));
+        }
 
         ImmutableMap.Builder<String, PartitionStatistics> result = ImmutableMap.builder();
         for (String partitionName : partitionBasicStatistics.keySet()) {

@@ -4,7 +4,7 @@ Statement Resource
 
 .. function:: POST /v1/statement
 
-   :query query: SQL Query to execute
+   :query: SQL Query to execute
    :reqheader X-Presto-User: User to execute statement on behalf of (optional)
    :reqheader X-Presto-Source: Source of query
    :reqheader X-Presto-Catalog: Catalog to execute query against
