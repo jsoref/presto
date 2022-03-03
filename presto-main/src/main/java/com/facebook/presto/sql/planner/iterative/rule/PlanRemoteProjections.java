@@ -55,14 +55,14 @@ import static com.google.common.collect.Iterables.getOnlyElement;
 import static java.util.Objects.requireNonNull;
 import static java.util.function.Function.identity;
 
-public class PlanRemotePojections
+public class PlanRemoteProjections
         implements Rule<ProjectNode>
 {
     private static final Pattern<ProjectNode> PATTERN = project();
 
     private final FunctionAndTypeManager functionAndTypeManager;
 
-    public PlanRemotePojections(FunctionAndTypeManager functionAndTypeManager)
+    public PlanRemoteProjections(FunctionAndTypeManager functionAndTypeManager)
     {
         this.functionAndTypeManager = requireNonNull(functionAndTypeManager, "functionManager is null");
     }
