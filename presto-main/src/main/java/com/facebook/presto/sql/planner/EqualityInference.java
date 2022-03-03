@@ -244,7 +244,7 @@ public class EqualityInference
     }
 
     /**
-     * Returns the most preferrable expression to be used as the canonical expression
+     * Returns the most preferable expression to be used as the canonical expression
      */
     private static RowExpression getCanonical(Iterable<RowExpression> expressions)
     {
