@@ -88,7 +88,7 @@ public class EliminateEmptyJoins
         /*
         This covers the cases where the whole join can not be pruned for outer join cases.
         In this case, we optimize the join using a projection over the non-empty child.
-        The follwoing are 4 scenarios:
+        The following are 4 scenarios:
         1. S1 left outer join S2 and S2 is empty. The join is rewritten as Projection over S1 with null values for fields of S2. For example,
            "select t1.X, dt.Y from t1 left outer (select * from t2 where 1=0) is rewritten as select t1.X, null as Y from t1
         2. S1 right outer join S2 and S1 is empty. Similiar to #1.
