@@ -189,7 +189,7 @@ public final class TDigestUtils
                 swap(order, from++, to--);
             }
             if (from == low) {
-                // ran out of things to copy.  This means that the the last destination is the boundary
+                // ran out of things to copy.  This means that the last destination is the boundary
                 low = to + 1;
             }
             else {
@@ -357,7 +357,7 @@ public final class TDigestUtils
                 swap(from++, to--, key, values);
             }
             if (from == low) {
-                // ran out of things to copy.  This means that the the last destination is the boundary
+                // ran out of things to copy.  This means that the last destination is the boundary
                 low = to + 1;
             }
             else {
