@@ -1081,9 +1081,9 @@ public class DatabaseShardManager
     }
 
     @Override
-    public List<BucketNode> getBucketNodes(long distibutionId)
+    public List<BucketNode> getBucketNodes(long distributionId)
     {
-        return dao.getBucketNodes(distibutionId);
+        return dao.getBucketNodes(distributionId);
     }
 
     @Override
