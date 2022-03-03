@@ -518,7 +518,7 @@ public class PlanOptimizers
 
         builder.add(new IterativeOptimizer(
                 // Because ReorderJoins runs only once,
-                // PredicatePushDown, PruneUnreferenedOutputs and RemoveRedundantIdentityProjections
+                // PredicatePushDown, PruneUnreferencedOutputs and RemoveRedundantIdentityProjections
                 // need to run beforehand in order to produce an optimal join order
                 // It also needs to run after EliminateCrossJoins so that its chosen order doesn't get undone.
                 ruleStats,
