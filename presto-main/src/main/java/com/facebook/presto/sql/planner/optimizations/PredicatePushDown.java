@@ -1439,7 +1439,7 @@ public class PredicatePushDown
                 }
             }
 
-            // See if we can push the source effective predicate to the filtering soruce side
+            // See if we can push the source effective predicate to the filtering source side
             for (RowExpression conjunct : nonInferableConjuncts(sourceEffectivePredicate)) {
                 RowExpression rewritten = allInference.rewriteExpression(conjunct, in(filteringSourceVariables));
                 if (rewritten != null) {
