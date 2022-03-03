@@ -174,7 +174,7 @@ public abstract class AbstractTestJoinQueries
     }
 
     @Test
-    public void testJoinWithRangePredicatesinJoinClause()
+    public void testJoinWithRangePredicatesInJoinClause()
     {
         assertQuery("SELECT COUNT(*) " +
                 "FROM (SELECT * FROM lineitem WHERE orderkey % 16 = 0 AND partkey % 2 = 0) lineitem " +
