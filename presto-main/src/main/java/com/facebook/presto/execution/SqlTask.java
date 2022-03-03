@@ -254,7 +254,7 @@ public class SqlTask
 
     private TaskStatus createTaskStatus(TaskHolder taskHolder)
     {
-        long taskStatusAgeInMilis = System.currentTimeMillis() - creationTimeInMillis;
+        long taskStatusAgeInMillis = System.currentTimeMillis() - creationTimeInMillis;
         // Always return a new TaskInfo with a larger version number;
         // otherwise a client will not accept the update
         long versionNumber = nextTaskInfoVersion.getAndIncrement();
@@ -329,7 +329,7 @@ public class SqlTask
                 fullGcCount,
                 fullGcTimeInMillis,
                 totalCpuTimeInNanos,
-                taskStatusAgeInMilis,
+                taskStatusAgeInMillis,
                 queuedPartitionedSplitsWeight,
                 runningPartitionedSplitsWeight);
     }
