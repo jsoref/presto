@@ -127,7 +127,7 @@ This table lists the supported client response headers.  After receiving a respo
 request headers that will be used in subsequent requests to be consistent with the response headers received.
 
 ====================================== =================================================================================================
-Respone Header Name                    Description
+Response Header Name                    Description
 ====================================== =================================================================================================
 ``X-Presto-Set-Catalog``               Instructs the client to set the catalog that will be sent in the
                                        ``X-Presto-Catalog`` request header in subsequent client requests.
