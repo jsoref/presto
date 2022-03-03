@@ -5507,7 +5507,7 @@ public abstract class AbstractTestHiveClient
                             temporaryDeleteInsert,
                             domainToDrop,
                             insertData,
-                            testCase.isExpectCommitedData() ? afterData : beforeData,
+                            testCase.isExpectCommittedData() ? afterData : beforeData,
                             testCase.getTag(),
                             testCase.isExpectQuerySucceed(),
                             testCase.getConflictTrigger());
@@ -5639,22 +5639,22 @@ public abstract class AbstractTestHiveClient
 
     protected static class TransactionDeleteInsertTestCase
     {
-        private final boolean expectCommitedData;
+        private final boolean expectCommittedData;
         private final boolean expectQuerySucceed;
         private final TransactionDeleteInsertTestTag tag;
         private final Optional<ConflictTrigger> conflictTrigger;
 
-        public TransactionDeleteInsertTestCase(boolean expectCommitedData, boolean expectQuerySucceed, TransactionDeleteInsertTestTag tag, Optional<ConflictTrigger> conflictTrigger)
+        public TransactionDeleteInsertTestCase(boolean expectCommittedData, boolean expectQuerySucceed, TransactionDeleteInsertTestTag tag, Optional<ConflictTrigger> conflictTrigger)
         {
-            this.expectCommitedData = expectCommitedData;
+            this.expectCommittedData = expectCommittedData;
             this.expectQuerySucceed = expectQuerySucceed;
             this.tag = tag;
             this.conflictTrigger = conflictTrigger;
         }
 
-        public boolean isExpectCommitedData()
+        public boolean isExpectCommittedData()
         {
-            return expectCommitedData;
+            return expectCommittedData;
         }
 
         public boolean isExpectQuerySucceed()
@@ -5678,7 +5678,7 @@ public abstract class AbstractTestHiveClient
             return toStringHelper(this)
                     .add("tag", tag)
                     .add("conflictTrigger", conflictTrigger.map(conflictTrigger -> conflictTrigger.getClass().getName()))
-                    .add("expectCommitedData", expectCommitedData)
+                    .add("expectCommittedData", expectCommittedData)
                     .add("expectQuerySucceed", expectQuerySucceed)
                     .toString();
         }
