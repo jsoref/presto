@@ -129,7 +129,7 @@ public class TestMergeWindows
      * "unit" tests in that they verify the behavior of MW with as few
      * external dependencies as possible. Those dependencies to include the
      * parser and analyzer, so the phrase "unit" tests should be taken with a
-     * grain of salt. Using the parser and anayzler instead of creating plan
+     * grain of salt. Using the parser and analyzer instead of creating plan
      * nodes by hand does have a couple of advantages over a true unit test:
      * 1) The tests are more self-maintaining.
      * 2) They're a lot easier to read.
