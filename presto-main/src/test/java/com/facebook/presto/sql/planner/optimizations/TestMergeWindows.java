@@ -135,7 +135,7 @@ public class TestMergeWindows
      * 2) They're a lot easier to read.
      * 3) It's a lot less typing.
      * <p>
-     * The test that runs with all of the optimzers acts as an integration test
+     * The test that runs with all of the optimizers acts as an integration test
      * and ensures that MW is effective when run with the complete set of
      * optimizers.
      */
